@@ -1,8 +1,8 @@
 package store
 
 import (
+	"github.com/agavi/timecraft/modules/configuration"
 	"github.com/asdine/storm"
-	"gitlab.intelstat.co/timecraft/modules/configuration"
 )
 
 var db *storm.DB
