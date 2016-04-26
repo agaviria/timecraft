@@ -30,7 +30,7 @@ var Setup = cli.Command{
 // install will create the database and run all migrations
 func install(ctx *cli.Context) {
 	configuration.LoadConf()
-	ui := &cliui.BasicUI{Writer: os.Stdout, Reader: os.Stdin}
+	ui := &cliui.BasicUi{Writer: os.Stdout, Reader: os.Stdin}
 
 	ps, _ := ui.Ask("Database filename:")
 
