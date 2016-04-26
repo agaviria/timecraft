@@ -17,7 +17,7 @@ package main
 import (
 	"os"
 
-	"github.com/agavi/timecraft/cmd"
+	"github.com/agaviria/timecraft/cmd"
 	"github.com/codegangsta/cli"
 )
 
