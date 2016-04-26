@@ -12,10 +12,27 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package timecraft
+package main
 
 import (
-	
+	"os"
+
+	"github.com/agavi/timecraft/cmd"
+	"github.com/codegangsta/cli"
 )
 
+// Version is the application semantic version
+const Version = "0.0.1"
 
+func main() {
+	app := cli.NewApp()
+	app.Name = "TimeCraft"
+	app.Usage = "Time tracking tasks"
+	app.Version = Version
+	app.EnableBashCompletion = true
+	app.Commands = []cli.Command{
+		cmd.Setup,
+	}
+	app.Flags = append(app.Flags, []cli.Flag{}...)
+	app.Run(os.Args)
+}

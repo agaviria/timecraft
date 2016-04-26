@@ -11,7 +11,7 @@ Timecraft is an application experiment which uses bolt and stormdb to handle ses
 
 ## State
 
-This package is in Alpha state please.  You are forewarned! use at your own risk.
+This package is in early alpha state.  You are forewarned! Please use at your own risk.
 
 ## License
 
