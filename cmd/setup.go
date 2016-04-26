@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/agaviria/timecraft/modules/configuration"
 	"github.com/codegangsta/cli"
 	cliui "github.com/mitchellh/cli"
-	"gitlab.intelstat.co/timecraft/modules/configuration"
 )
 
 // Setup command to install the configuration and reset the database

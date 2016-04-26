@@ -1,7 +1,7 @@
 package store
 
 import (
-	"github.com/agavi/timecraft/modules/configuration"
+	"github.com/agaviria/timecraft/modules/configuration"
 	"github.com/asdine/storm"
 )
 
