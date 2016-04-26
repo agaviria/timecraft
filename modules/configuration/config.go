@@ -2,6 +2,7 @@ package configuration
 
 import (
 	"fmt"
+	"os"
 
 	"github.com/go-ini/ini"
 	"github.com/unrolled/render"
