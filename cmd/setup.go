@@ -48,8 +48,8 @@ func reset(ctx *cli.Context) {
 	err := os.Remove(configuration.Configs.Store)
 
 	if err != nil {
-		fmt.Println(err)
+		fmt.Printf("Error Removing File: %s\n", err)
 		return
 	}
-	fmt.Printf("Database %s reset", configuration.Configs.Store)
+	fmt.Printf("Database %s has executed a reset", configuration.Configs.Store)
 }
