@@ -32,6 +32,7 @@ func main() {
 	app.EnableBashCompletion = true
 	app.Commands = []cli.Command{
 		cmd.Setup,
+		cmd.Net,
 	}
 	app.Flags = append(app.Flags, []cli.Flag{}...)
 	app.Run(os.Args)

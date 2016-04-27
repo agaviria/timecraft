@@ -30,7 +30,7 @@ var Setup = cli.Command{
 // install will create the database and run all migrations
 func install(ctx *cli.Context) {
 	configuration.LoadConf()
-	ui := &cliui.BasicUI{Writer: os.Stdout, Reader: os.Stdin}
+	ui := &cliui.BasicUi{Writer: os.Stdout, Reader: os.Stdin}
 
 	ps, _ := ui.Ask("Database filename:")
 
@@ -48,8 +48,8 @@ func reset(ctx *cli.Context) {
 	err := os.Remove(configuration.Configs.Store)
 
 	if err != nil {
-		fmt.Println(err)
+		fmt.Printf("Error Removing File: %s\n", err)
 		return
 	}
-	fmt.Printf("Database %s reset", configuration.Configs.Store)
+	fmt.Printf("Database %s has executed a reset", configuration.Configs.Store)
 }
