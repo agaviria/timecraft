@@ -12,16 +12,16 @@ import (
 // Setup command to install the configuration and reset the database
 var Setup = cli.Command{
 	Name:  "setup",
-	Usage: "timecraft setup tools",
+	Usage: "./timecraft <Command> <Subcommand>",
 	Subcommands: []cli.Command{
 		{
 			Name:   "install",
-			Usage:  "Install timecraft",
+			Usage:  "installs configurations: » ./timecraft setup install",
 			Action: install,
 		},
 		{
 			Name:   "reset",
-			Usage:  "Resets the database",
+			Usage:  "resets database: » ./timecraft setup reset",
 			Action: reset,
 		},
 	},
