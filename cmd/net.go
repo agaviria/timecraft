@@ -32,9 +32,9 @@ var Net = cli.Command{
 
 // serveNet will serve site and api
 func serveNet(ctx *cli.Context) {
-	// Load configurations
+	// Load configuration and save
 	// TODO: add port to config.ini and bind to log below
-	configuration.LoadConf()
+	configuration.SaveConfig()
 
 	e := echo.New()
 	r := pongor.GetRenderer()
@@ -49,6 +49,6 @@ func serveNet(ctx *cli.Context) {
 	e.Static("/css/", "src/css")
 
 	// start server
-	log.Println("Listening and serving....")
-	e.Run(fasthttp.New(":8000"))
+	log.Printf("Listening and serving.... port: %s\n", configuration.Configs.Domain)
+	e.Run(fasthttp.New(configuration.Configs.Domain))
 }

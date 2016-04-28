@@ -29,7 +29,6 @@ var Setup = cli.Command{
 
 // install will create the database and run all migrations
 func install(ctx *cli.Context) {
-	configuration.LoadConf()
 	ui := &cliui.BasicUi{Writer: os.Stdout, Reader: os.Stdin}
 
 	ps, _ := ui.Ask("Database filename:")
@@ -43,8 +42,6 @@ func install(ctx *cli.Context) {
 
 // reset will drop the database schema and run all migrations again
 func reset(ctx *cli.Context) {
-	configuration.LoadConf()
-
 	err := os.Remove(configuration.Configs.Store)
 
 	if err != nil {
