@@ -11,5 +11,5 @@ Names should be added to this file as:
 Please keep the list sorted.
 * * *
 
-Alejandro R. Gaviria <mr.gaviria AT gmail.com>
+Alejandro R. Gaviria <mr.gaviria@gmail.com>
 

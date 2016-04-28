@@ -4,10 +4,18 @@ Timecraft is an application experiment which uses bolt and stormdb to handle ses
 
 [Documentation online](http://godoc.org/github.com/agavi/timecraft)
 
+### Install Gom
+
+This project is using [gom](https://github.com/mattn/gom) for dependency management.
+
+- Set `GO15VENDOREXPERIMENT=1` when using Go 1.5.
+- You don't need to set `GO15VENDOREXPERIMENT` when using Go 1.6. It's on by default.
+
 ## Installation
 
 	go get github.com/agaviria/timecraft
-
+    gom install
+    gom build
 
 ## State
 
