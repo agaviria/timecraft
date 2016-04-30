@@ -29,7 +29,10 @@ _testmain.go
 
 # loaders
 config.ini
-notes.log
+*.db
+*.log
+
+# libs
 .notes/
 .sass-cache/
 bower_components/

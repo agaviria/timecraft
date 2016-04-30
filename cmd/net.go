@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"log"
+	log "github.com/Sirupsen/logrus"
 	"os"
 
 	"github.com/agaviria/timecraft/modules/configuration"
@@ -28,18 +28,14 @@ var Net = cli.Command{
 
 // serveNet will serve site and api
 func serveNet(ctx *cli.Context) {
+	configuration.LoadConfig()
 	// Load configuration and save
 
-	ui := &cliui.BasicUi{Writer: os.Stdout, Reader: os.Stdin}
+	ui := &cliui.BasicUi{Writer: os.Stdout}
 
 	// input must be prefixed with a colon (:)
 	// i.e.  :8080
-	domain, _ := ui.Ask("Static Server Port Domain:")
-
-	if domain != "" {
-		configuration.Configs.Domain = domain
-		configuration.SaveConfig()
-	}
+	ui.Info("INFO: Initializing server, middleware, renderer and routes...")
 
 	e := echo.New()
 	r := pongor.GetRenderer()
@@ -54,6 +50,6 @@ func serveNet(ctx *cli.Context) {
 	e.Static("/css/", "src/css")
 
 	// start server
-	log.Printf("Listening and serving.... port: %s\n", configuration.Configs.Domain)
+	log.Infof("Listening and serving.... port: %s\n", configuration.Configs.Domain)
 	e.Run(fasthttp.New(configuration.Configs.Domain))
 }

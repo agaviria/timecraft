@@ -1,10 +1,10 @@
 package models
 
 import (
-	"gopkg.in/mgo.V2/bson"
+	"labix.org/v2/mgo/bson"
 )
 
 // Base entity for models
 type Base struct {
-	ID bson.ObjectID `storm:"id"`
+	ID bson.ObjectId `bson: "_id"`
 }
