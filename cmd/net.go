@@ -2,7 +2,6 @@ package cmd
 
 import (
 	log "github.com/Sirupsen/logrus"
-	"os"
 
 	"github.com/agaviria/timecraft/modules/configuration"
 	"github.com/codegangsta/cli"
@@ -10,7 +9,6 @@ import (
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/engine/fasthttp"
 	"github.com/labstack/echo/middleware"
-	cliui "github.com/mitchellh/cli"
 )
 
 // Net is the web interface and api command.
@@ -29,13 +27,8 @@ var Net = cli.Command{
 // serveNet will serve site and api
 func serveNet(ctx *cli.Context) {
 	configuration.LoadConfig()
-	// Load configuration and save
 
-	ui := &cliui.BasicUi{Writer: os.Stdout}
-
-	// input must be prefixed with a colon (:)
-	// i.e.  :8080
-	ui.Info("INFO: Initializing server, middleware, renderer and routes...")
+	log.Info("Initializing server, middleware, renderer and routes...")
 
 	e := echo.New()
 	r := pongor.GetRenderer()
