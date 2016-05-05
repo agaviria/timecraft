@@ -1,0 +1,100 @@
+@import 'variables'
+@import 'mixins'
+
+html{
+  background light-color
+  font-family 'Montserrat', sans-serif
+}
+p, span{
+  text-align center
+  color main-color
+  font-size 11px
+}
+a {
+  color warning-color
+}
+.container{
+  margin 0 auto
+  width 450px
+}
+#login{
+  border-radius 5px
+  background:#fff
+  width 400px
+  height 450px
+  margin 100px auto
+  border 0
+  outline 0
+  #form{
+    position absolute
+    margin-top 60px
+    padding 20px
+    .form-control{
+      margin-top 30px
+    }
+    .form-label{
+      text-transform uppercase
+      color main-color
+      font-weight 700
+      font-size 14px
+      letter-spacing 2px
+    }
+    .form-forgot a,.form-forgot a hover,.form-forgot a visited,.form-forgot a focus{
+      float right
+      color warning-color
+      font-size 10px
+      text-decoration none
+    }
+    .input-text{
+      margin-top 20px
+      border 0
+      font-size 16px
+      width 340px
+      border-bottom 1px solid medium-color
+    }
+    input focus{
+      outline 0
+    }
+    input[type="checkbox"]{
+      
+      //display inline-block;
+    } 
+    .form-session{
+      font-size 12px
+    }
+    .btn{
+      color #fff
+      background warning-color
+      padding 15px
+      border 0
+      outline 0
+      width 350px
+      //border 1px solid #253137;
+      text-transform uppercase
+      font-size 14px
+      letter-spacing 1.2px
+      font-weight 700
+    }
+    .btn hover{
+      //border: 1px solid #000;
+      transition all ease-in 0.2s
+      background (warning-color + color--delta)
+      color #fff
+    }
+    .btn active{
+    transition all ease-in 0.3s
+    background (warning-color - color--delta)
+    }
+  }
+  .message{
+  display none
+  text-align center
+  color #fff
+  width 350px
+  position absolute
+  background #FF1744
+  margin-top -35px
+  font-size 12px
+  font-weight 100
+  }
+}
