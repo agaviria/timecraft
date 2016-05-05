@@ -1,0 +1,107 @@
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+.clearfix:after {
+  clear: both;
+}
+html {
+  background: #eff4f6;
+  font-family: 'Montserrat', sans-serif;
+}
+p,
+span {
+  text-align: center;
+  color: #249fa4;
+  font-size: 11px;
+}
+a {
+  color: #ee4221;
+}
+.container {
+  margin: 0 auto;
+  width: 450px;
+}
+#login {
+  border-radius: 5px;
+  background: #fff;
+  width: 400px;
+  height: 450px;
+  margin: 100px auto;
+  border: 0;
+  outline: 0;
+}
+#login #form {
+  position: absolute;
+  margin-top: 60px;
+  padding: 20px;
+}
+#login #form .form-control {
+  margin-top: 30px;
+}
+#login #form .form-label {
+  text-transform: uppercase;
+  color: #249fa4;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+#login #form .form-forgot a,
+#login #form .form-forgot a hover,
+#login #form .form-forgot a visited,
+#login #form .form-forgot a focus {
+  float: right;
+  color: #ee4221;
+  font-size: 10px;
+  text-decoration: none;
+}
+#login #form .input-text {
+  margin-top: 20px;
+  border: 0;
+  font-size: 16px;
+  width: 340px;
+  border-bottom: 1px solid #797979;
+}
+#login #form input focus {
+  outline: 0;
+}
+#login #form .form-session {
+  font-size: 12px;
+}
+#login #form .btn {
+  color: #fff;
+  background: #ee4221;
+  padding: 15px;
+  border: 0;
+  outline: 0;
+  width: 350px;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1.2px;
+  font-weight: 700;
+}
+#login #form .btn hover {
+  transition: all ease-in 0.2s;
+  background: #fe5231;
+  color: #fff;
+}
+#login #form .btn active {
+  transition: all ease-in 0.3s;
+  background: #de3211;
+}
+#login .message {
+  display: none;
+  text-align: center;
+  color: #fff;
+  width: 350px;
+  position: absolute;
+  background: #ff1744;
+  margin-top: -35px;
+  font-size: 12px;
+  font-weight: 100;
+}
