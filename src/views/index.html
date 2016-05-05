@@ -3,10 +3,43 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="/js/index.js" charset="utf-8"></script>
-        <title>{{ title  }}</title>
+        <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <link href='/css/style.css' rel='stylesheet' type='text/css'>
+        <title>Login - Timecraft</title>
     </head>
     <body>
+  <div class="container">
+    <div id="login">
+
+      <div id="form">
+        <form action="">
+          <div class="message">Invalid Password</div>
+          <div class="form-control">
+            <label for="email" class="form-label">E-mail</label>
+            <br>
+            <input class="input-text" type="email" name="email" autofocus>
+          </div>
+          <div class="form-control">
+            <label for="password" class="form-label">Password</label>
+            <label for="password" class="form-forgot">
+                          <a href="#">Forgot?</a>
+                      </label>
+            <br>
+            <input class="input-text" type="password" name="pwd">
+          </div>
+          <div class="form-control">
+            <input type="checkbox" name="session">
+            <label for="session" class="form-session">Keep me logged in</label>
+          </div>
+          <div class="form-control">
+            <button class="btn">Login</button>
+          </div>
+          <p>Not a member? <span><a href="#">Sign Up</span></a></p>
+        </form>
+      </div>
+    </footer>
+    </div>
+    </div>
+  </div>
     </body>
 </html>
-
