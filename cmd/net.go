@@ -41,6 +41,7 @@ func serveNet(ctx *cli.Context) {
 	// routes
 	e.Static("/js/", "src/js")
 	e.Static("/css/", "src/css")
+	e.File("/", "src/views/index.html")
 
 	// start server
 	log.Infof("Listening and serving.... port: %s\n", configuration.Configs.Domain)
