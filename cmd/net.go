@@ -18,14 +18,14 @@ var Net = cli.Command{
 	Subcommands: []cli.Command{
 		{
 			Name:   "run",
-			Usage:  "initializes fasthttp server: » ./timecraft net run",
-			Action: serveNet,
+			Usage:  "Initialize fasthttp server and render pongo2 templates » ./timecraft net run",
+			Action: ListenAndServe,
 		},
 	},
 }
 
 // serveNet will serve site and api
-func serveNet(ctx *cli.Context) {
+func ListenAndServe(ctx *cli.Context) {
 	configuration.LoadConfig()
 
 	log.Info("Initializing server, middleware, renderer and routes...")
@@ -38,10 +38,27 @@ func serveNet(ctx *cli.Context) {
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
 
-	// routes
+	// static assets
 	e.Static("/js/", "src/js")
 	e.Static("/css/", "src/css")
-	e.File("/", "src/views/index.html")
+
+	// routes
+	e.Get("/", func() echo.HandlerFunc {
+		return func(ctx echo.Context) error {
+			ctx.Render(200, "index.html", map[string]interface{}{
+				"title": "Login - TimeCraft",
+			})
+			return nil
+		}
+	}())
+	e.Get("/signup", func() echo.HandlerFunc {
+		return func(ctx echo.Context) error {
+			ctx.Render(200, "signup.html", map[string]interface{}{
+				"title": "Sign-up - TimeCraft",
+			})
+			return nil
+		}
+	}())
 
 	// start server
 	log.Infof("Listening and serving.... port: %s\n", configuration.Configs.Domain)
